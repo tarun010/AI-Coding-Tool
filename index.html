@@ -82,8 +82,40 @@
             title: "Software Engineer",
             friends: ["Jane", "Doe"]
         };
-        
 
+        // functions:
+        function greet(name) {
+            console.log("Hello " + name);
+        }
+
+        function add_v1(){
+            let a = 5;
+            let b = 10;
+            let c = a + b;
+            console.log(c);
+        }
+ 
+        function add_v2(a, b){
+            let c = a + b;
+            console.log(c);
+        }
+
+        function add_v3(a, b){
+            return a + b;
+        }
+
+        function printHello(){
+            console.log("Hello");
+        }
+
+        add_v1();
+        add_v2(1, 10);
+        console.log(add_v3(3, 10));
+        printHello();
+
+
+        const myButton = document.getElementById("myButtonid");
+        myButton.innerHTML = "Get me the answer!";
     </script>
 </body>
 </html>
