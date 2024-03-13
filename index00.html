@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        My Project
+    </h1>
+
+    <p>
+        Problem:
+    </p>
+
+    <textarea name="problem" id="problem" cols="30" rows="5" placeholder="Describe your coding problem..."></textarea>
+
+    <p>
+        Clarity:
+    </p>
+
+    <input type="range" min="0" max="10" id="clarity"/>
+    <br/>
+
+    <Button>
+        Submit
+    </Button>
+
+    <p>
+        Results!
+    </p>
+
+    <script>
+        // alert("Hello World");
+        // console.log("Hello World");
+        // console.log("Hello World!2");
+
+        const name = "John";
+        let age = 30;
+        let title = "Software Engineer";
+        let problem = "some problem";
+
+        age += 1;
+        
+        // arrays:
+        const studentNames = ["John", "Jane", "Doe"];
+        console.log(studentNames[3]);
+        studentNames.push("Smith");
+        studentNames[1] = "Mary";
+        console.log(studentNames);
+
+        //objects:
+        const person = {
+            name: "John",
+            age: 30,
+            title: "Software Engineer"
+        };
+        console.log(person);
+        console.log(person.name);
+        person.age = 31;
+        console.log(person);
+
+        // objects in arrays:
+        const students = [
+            {
+                name: "John",
+                age: 30,
+                title: "Software Engineer"
+            },
+            {
+                name: "Jane",
+                age: 25,
+                title: "Doctor"
+            }
+        ];
+
+        // arrays in objects:
+        const person2 = {
+            name: "John",
+            age: 30,
+            title: "Software Engineer",
+            friends: ["Jane", "Doe"]
+        };
+
+        // functions:
+        function greet(name) {
+            console.log("Hello " + name);
+        }
+
+        function add_v1(){
+            let a = 5;
+            let b = 10;
+            let c = a + b;
+            console.log(c);
+        }
+ 
+        function add_v2(a, b){
+            let c = a + b;
+            console.log(c);
+        }
+
+        function add_v3(a, b){
+            return a + b;
+        }
+
+        function printHello(){
+            console.log("Hello");
+        }
+
+        add_v1();
+        add_v2(1, 10);
+        console.log(add_v3(3, 10));
+        printHello();
+
+
+        const myButton = document.getElementById("myButtonid");
+        myButton.innerHTML = "Get me the answer!";
+    </script>
+</body>
+</html>

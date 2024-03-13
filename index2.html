@@ -25,7 +25,7 @@
 
     <p id="resultsParagraph">Results!</p>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"</script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
       console.log("START OF CODE");
       // store the important html elements in javascript objects
@@ -44,32 +44,36 @@
         console.log(problemValue, clarityValue);
 
         // send the problem and clarity to chatgpt
-
-        
         const data = {
           model: "gpt-3.5-turbo",
           messages: [
             {
               role: "system",
-              content: "You are a helpful assistant.",
+              content: "You are a helpful assistant trying to teach me. You are most likely not going to give the complete answer, but guide me towards it. The level of clarity is defined on a scale from 0 to 10. 0 means that your answer is intentionally very vague and difficult; and 10 means that your answer is very clear, you explain like I am a beginner, and you give complete steps for it. The scale is " + clarityValue + ".",
             },
             {
               role: "user",
-              content: "What is the capital of Italy?",
+              content: problemValue,
             },
           ],
         };
+
+        function openaiResponseHandler(response) {
+          console.log("We got a response from OpenAI...");
+          const responseMessage = response.data.choices[0].message.content;
+          resultsParagraph.innerHTML = responseMessage;
+        }
+
+
         axios
           .post("https://api.openai.com/v1/chat/completions", data, {
             headers: {
               "Content-Type": "application/json",
               Authorization:
-                Bearer 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",
+                "Bearer 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",
             },
           })
-          .then(function (response) {
-            console.log(response);
-          })
+          .then(openaiResponseHandler);
       
       // get the answer and put it in the results paragraph
 
